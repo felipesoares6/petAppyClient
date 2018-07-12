@@ -11,7 +11,7 @@ class Users extends React.Component {
   }
 
   render() {
-    const { navigate, data } = this.props.navigation
+    const { data } = this.props
 
     return (
       <View>
@@ -27,14 +27,12 @@ class Users extends React.Component {
         {
           data && data.loading && <Text>Loading..</Text>
         }
-        <Button
-          title="Go back"
-          onPress={() => navigate('Home')}
-        />
+        {
+          data && data.error && <Text>{data.error.trace}</Text>
+        }
       </View>
     )
   }
 }
-
 
 export default graphql(USERS)(Users)
