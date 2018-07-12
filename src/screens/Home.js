@@ -13,7 +13,6 @@ class Home extends React.Component {
       <View>
         <Text> Welcome to petAppy! </Text>
 
-
         <Button
           title="Check the users"
           onPress={() => navigate('Users')}
@@ -21,6 +20,10 @@ class Home extends React.Component {
         <Button
           title="Add a new user"
           onPress={() => navigate('AddUser')}
+        />
+        <Button
+          title="Find a specific user"
+          onPress={() => navigate('User')}
         />
       </View>
     )

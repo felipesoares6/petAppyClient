@@ -11,9 +11,9 @@ export const USERS = gql`
   }
 `
 
-export const USER = (id) => gql`
-  query {
-    users(id ${id}){
+export const USER = gql`
+  query user($id: ID!){
+    user(id: $id){
       id
       name
       email
