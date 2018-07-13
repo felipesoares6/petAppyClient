@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-export const USERS = gql`
+export const GET_USERS = gql`
   query {
     users {
       id
@@ -11,7 +11,7 @@ export const USERS = gql`
   }
 `
 
-export const USER = gql`
+export const GET_USER = gql`
   query user($id: ID!){
     user(id: $id){
       id

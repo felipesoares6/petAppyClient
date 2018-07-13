@@ -1,34 +1,27 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, TextInput } from 'react-native'
 
-import { Query } from 'react-apollo'
-
-import { USER } from '../queries/users'
+import UserDetails from '../containers/UserDetails'
 
 class User extends React.Component {
   static navigationOptions = {
     title: 'Find the user'
   }
 
+  state = { userId: "" }
+
   render() {
-    const id = "1"
+    const { userId } = this.state
+
     return (
-      <Query query={USER} variables={{ id }}>
-        {({ loading, error, data }) => {
-          if (loading) return <Text>Loading..</Text>
-          if (error) return <Text>{`Error!: ${error}`}</Text>
+      <View>
+        <TextInput
+          onChangeText={(value) => this.setState({ userId: value })}
+          value={userId}
+        />
 
-          const { user } = data
-
-          return (
-            <View key={user.id}>
-              <Text>Name: {user.name}</Text>
-              <Text>E-mail: {user.email}</Text>
-              <Text>Phone: {user.phone}</Text>
-            </View>
-          )
-        }}
-      </Query>
+        {!!userId && <UserDetails id={userId.toString()} />}
+      </View>
     )
   }
 }
