@@ -8,7 +8,7 @@ class User extends React.Component {
     title: 'Find the user'
   }
 
-  state = { userId: "" }
+  state = { userId: '' }
 
   render() {
     const { userId } = this.state

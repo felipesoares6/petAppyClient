@@ -17,13 +17,15 @@ class Home extends React.Component {
           title="Check the users"
           onPress={() => navigate('Users')}
         />
-        <Button
-          title="Add a new user"
-          onPress={() => navigate('AddUser')}
-        />
+
         <Button
           title="Find a specific user"
           onPress={() => navigate('User')}
+        />
+
+        <Button
+          title="Create an user"
+          onPress={() => navigate('CreateUser')}
         />
       </View>
     )

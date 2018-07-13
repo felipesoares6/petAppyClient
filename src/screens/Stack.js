@@ -1,13 +1,13 @@
 import { createStackNavigator } from 'react-navigation';
 
 import Home from './Home'
-import AddUser from './AddUser'
+import CreateUser from './CreateUser'
 import Users from './Users'
 import User from './User'
 
 export default createStackNavigator({
   Home,
-  AddUser,
+  CreateUser,
   Users,
   User
 }, { initialRouteName: 'Home' })

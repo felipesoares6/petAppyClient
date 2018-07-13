@@ -22,3 +22,29 @@ export const GET_USER = gql`
   }
 
 `
+
+export const CREATE_USER = gql`
+  mutation createUser(
+    $name: String!
+    $phone: Int
+    $email: String!
+    $password: String!
+  ){
+    createUser(
+      name: $name
+      phone: $phone
+      authProvider: {
+        account: {
+          email: $email
+          password: $password
+        }
+      }
+    ){
+      id
+      name
+      email
+      phone
+    }
+  }
+
+`
